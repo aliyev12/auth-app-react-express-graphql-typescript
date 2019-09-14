@@ -18,12 +18,15 @@ const link = new HttpLink({
 
 const client = new ApolloClient({
   cache,
-  link
+  link,
+  connectToDevTools: true,
 });
 
 ReactDOM.render(
   <ApolloProvider client={client}>
     <Router>
+
+      {/* <Route path="/" component={App} /> */}
       <App />
     </Router>
   </ApolloProvider>,
